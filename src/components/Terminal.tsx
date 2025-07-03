@@ -6,7 +6,7 @@ import { typeEffect } from "../utils/typeEffect";
 
 const Terminal: React.FC = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const term = useRef<XTerm>();
+  const term = useRef<XTerm | null>(null);
 
   function rewriteCurrentLine(term: XTerm, input: string) {
     term.write("\x1b[2K\r"); // Clear current line
@@ -24,7 +24,9 @@ const Terminal: React.FC = () => {
         },
       });
 
-      term.current.open(terminalRef.current!);
+      if (term.current && terminalRef.current) {
+        term.current.open(terminalRef.current);
+      }
 
       const prompt = () => term.current?.write(`\r\najeet@cli:~$ `);
 
