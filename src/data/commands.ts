@@ -14,6 +14,7 @@ export function handleCommand(command: string): string[] {
         "Available commands:",
         " - help: Show this help message",
         " - ls: List files",
+        " - whoami: Tells about me",
         " - cat about.txt: View about info",
         " - cat resume.pdf: Open resume preview",
         " - cv: Alias for resume",
@@ -58,6 +59,17 @@ export function handleCommand(command: string): string[] {
 
         "💬 Realtime Chat (React, Node.js, Socket.io)",
         "End-to-end encrypted chat app with JWT auth and <100ms latency.",
+      ];
+    case "cat about.txt":
+    case "whoami":
+      return [
+        "Ajeet Singh",
+        "B.Tech CSE @ Lovely Professional University (CGPA: 8.95)",
+        "Strong in Backend, Algorithms, and Competitive Programming.",
+        "Skilled in Java, TypeScript, React, Node.js, Django, MongoDB, etc.",
+        "Loves building real-time apps and exploring scalable architecture.",
+        "LinkedIn: linkedin.com/in/ajeetsinghprayag/",
+        "GitHub: github.com/tech-fear",
       ];
 
     case "contact":
